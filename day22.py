@@ -1,6 +1,6 @@
 def decimal_to_octal(number: int) -> str:
     """
-    decimal number to octal number
+    decimal number to octal number (by repetition)
     :param number: integer (base dec)
     :return: string (base octal)
     """
