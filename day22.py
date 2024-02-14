@@ -1,18 +1,15 @@
-def dfs(g, i, visited):
-    visited[i] = 1
-    print(chr(ord('A')+i), end=' ')
-    for j in range(len(g)):
-        if g[i][j] == 1 and not visited[j]:
-            dfs(g, j, visited)
+def decimal_to_octal(number: int) -> str:
+    """
+    decimal number to octal number
+    :param number: integer (base dec)
+    :return: string (base octal)
+    """
+    octal = ''
+    while number > 0:
+        octal = str(number % 8) + octal
+        number = number // 8
+    return octal
 
-graph = [
-    [0, 1, 1, 0, 0, 0],
-    [1, 0, 0, 1, 0, 0],
-    [1, 0, 0, 1, 0, 0],
-    [0, 1, 1, 0, 1, 1],
-    [0, 0, 0, 1, 0, 1],
-    [0, 0, 0, 1, 1, 0]
-]
 
-visited = [0 for _ in range(len(graph))]
-dfs(graph, 0, visited)
+n = int(input("Input decimal number : "))
+print(decimal_to_octal(n))
